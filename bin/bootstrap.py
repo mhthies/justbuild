@@ -83,6 +83,7 @@ SRCDIR = os.getcwd()
 WRKDIR = None
 DISTDIR = []
 LOCALBASE = "/"
+NON_LOCAL_DEPS = []
 
 # other global variables
 
@@ -186,6 +187,8 @@ def config_to_local(*, repos_file, link_targets_file):
         repos = json.load(f)
     global_link_dirs = set()
     for repo in repos["repositories"]:
+        if repo in NON_LOCAL_DEPS:
+            continue
         desc = repos["repositories"][repo]
         repo_desc = desc.get("repository")
         if not isinstance(repo_desc, dict):
@@ -331,6 +334,7 @@ def main(args):
     global DISTDIR
     global LOCAL_DEPS
     global LOCALBASE
+    global NON_LOCAL_DEPS
     if len(args) > 1:
         SRCDIR = os.path.abspath(args[1])
     if len(args) > 2:
@@ -345,6 +349,7 @@ def main(args):
 
     LOCAL_DEPS = "PACKAGE" in os.environ
     LOCALBASE = os.environ.get("LOCALBASE", "/")
+    NON_LOCAL_DEPS = os.environ.get("NON_LOCAL_DEPS", "").split(";")
     bootstrap()
 
 

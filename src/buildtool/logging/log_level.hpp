@@ -19,6 +19,8 @@
 #include <string>
 #include <type_traits>
 
+#include <fmt/core.h>
+#include <fmt/format.h>
 #include <gsl-lite/gsl-lite.hpp>
 
 enum class LogLevel {
@@ -60,5 +62,13 @@ constexpr auto kLastLogLevel = LogLevel::Trace;
     }
     gsl_Ensures(false);  // unreachable
 }
+
+template <> struct fmt::formatter<LogLevel>: fmt::formatter<std::string> {
+    // parse is inherited from formatter<std::string>.
+  
+    auto format(LogLevel level, format_context& ctx) const {
+        return fmt::formatter<std::string>::format(LogLevelToString(level), ctx);
+    }
+};
 
 #endif  // INCLUDED_SRC_BUILDTOOL_LOGGING_LOG_LEVEL_HPP

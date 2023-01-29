@@ -536,7 +536,7 @@ class FileSystemManager {
                     Logger::Log(LogLevel::Error,
                                 "unsupported type for dir entry {}",
                                 entry.path().string());
-                    return false;
+                    continue;
                 }
                 if (not read_entry(entry.path().filename(), type)) {
                     return false;

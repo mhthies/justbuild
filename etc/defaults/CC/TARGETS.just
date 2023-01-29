@@ -8,7 +8,6 @@
     , "-Wextra"
     , "-Wpedantic"
     , "-Wsign-conversion"
-    , "-Werror"
     , "-pedantic-errors"
     ]
   , "ADD_CXXFLAGS":
@@ -19,7 +18,6 @@
         , "-Wextra"
         , "-Wpedantic"
         , "-Wsign-conversion"
-        , "-Werror"
         , "-pedantic-errors"
         ]
       , { "type": "if"

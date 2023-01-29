@@ -38,7 +38,6 @@
             , [ "-Wa,--noexecstack"
               , "-D_XOPEN_SOURCE=700"
               , "-Wall"
-              , "-Werror"
               , "-Wformat=2"
               , "-Wsign-compare"
               , "-Wmissing-field-initializers"

@@ -1,21 +1,28 @@
 { "cli11":
   { "type": ["@", "rules", "CC", "library"]
   , "hdrs":
-    [ "Option.hpp"
-    , "Split.hpp"
-    , "Formatter.hpp"
+    [ "App.hpp"
+    , "CLI.hpp"
+    , "Config.hpp"
     , "ConfigFwd.hpp"
-    , "Version.hpp"
-    , "TypeTools.hpp"
-    , "Validators.hpp"
+    , "Error.hpp"
+    , "Formatter.hpp"
     , "FormatterFwd.hpp"
     , "Macros.hpp"
+    , "Option.hpp"
+    , "Split.hpp"
     , "StringTools.hpp"
-    , "Error.hpp"
     , "Timer.hpp"
-    , "CLI.hpp"
-    , "App.hpp"
-    , "Config.hpp"
+    , "TypeTools.hpp"
+    , "Validators.hpp"
+    , "Version.hpp"
+    , "impl/App_inl.hpp"
+    , "impl/Config_inl.hpp"
+    , "impl/Formatter_inl.hpp"
+    , "impl/Option_inl.hpp"
+    , "impl/Split_inl.hpp"
+    , "impl/StringTools_inl.hpp"
+    , "impl/Validators_inl.hpp"
     ]
   , "stage": ["CLI"]
   }

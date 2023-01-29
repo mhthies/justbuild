@@ -4,10 +4,10 @@
   { "type": ["@", "rules", "CC", "library"]
   , "name": ["protobuf"]
   , "hdrs": [["include", "protobuf"]]
-  , "private-ldflags": ["-lprotobuf", "-lprotobuf_lite"]
+  , "private-ldflags": ["-lprotobuf", "-lprotobuf-lite"]
   }
 , "well_known_protos":
   { "type": ["@", "rules", "data", "staged"]
-  , "srcs": [["proto/google/protobuf", "well_known_protos"]]
+  , "srcs": [["include/google/protobuf", "well_known_protos"]]
   }
 }
